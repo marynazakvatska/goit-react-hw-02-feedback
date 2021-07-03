@@ -1,0 +1,18 @@
+.btn {
+  width: 100px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  border-radius: 10px;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 250ms;
+}
+.btn:not(:last-child) {
+  margin-right: 15px;
+}
+.btn:hover,
+.btn:focus {
+  background-color: rgb(211, 102, 202);
+  transform: translateY(-10px);
+  color: aliceblue;
+}
