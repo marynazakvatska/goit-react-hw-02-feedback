@@ -22,10 +22,10 @@ class Counter extends React.Component {
     bad: 0,
   };
 
-  btnIncrement = (evt) => {
+  btnIncrement = (e) => {
     this.setState((prevState) => {
       return {
-        [evt]: prevState[evt] + 1,
+        [e]: prevState[e] + 1,
       };
     });
   };
