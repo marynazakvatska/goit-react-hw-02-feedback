@@ -6,15 +6,6 @@ import Notification from "../Notification/Notification";
 import s from "./Counter.module.css";
 import Section from "../Section/Section";
 
-/* 
-    static PropTypes = {
-         name: PropTypes.string.isRequired,
-  tag: PropTypes.string.isRequired,
-  location: PropTypes.string.isRequired,
-  avatar: PropTypes.string,
-  stats: PropTypes.string.isRequired,
-    }   */
-
 class Counter extends React.Component {
   state = {
     good: 0,
@@ -22,7 +13,15 @@ class Counter extends React.Component {
     bad: 0,
   };
 
-  btnIncrement = (e) => {
+  /*  increment = (e) => {
+    this.setState((prevState) => {
+      return {
+        [e]: prevState[e] + 1,
+      };
+    });
+  }; */
+
+  increment = (e) => {
     this.setState((prevState) => {
       return {
         [e]: prevState[e] + 1,
@@ -39,7 +38,7 @@ class Counter extends React.Component {
 
   render() {
     const { good, neutral, bad } = this.state;
-    const totalFeedback = this.countTotalFeedback(good, bad, neutral);
+    const totalFeedback = this.countTotalFeedback(good, neutral, bad);
     const positiveFeedPercentage = this.countPositiveFeedbackPercentage(
       good,
       neutral,
@@ -51,7 +50,7 @@ class Counter extends React.Component {
         <Section title="Please leave your feedback">
           <FeedbackOptions
             options={this.state}
-            onLeaveFeedback={this.btnIncrement}
+            onLeaveFeedback={this.increment}
           />
         </Section>
 
