@@ -13,14 +13,6 @@ class Counter extends React.Component {
     bad: 0,
   };
 
-  /*  increment = (e) => {
-    this.setState((prevState) => {
-      return {
-        [e]: prevState[e] + 1,
-      };
-    });
-  }; */
-
   increment = (e) => {
     this.setState((prevState) => {
       return {
